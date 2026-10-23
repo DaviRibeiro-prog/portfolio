@@ -1,0 +1,13 @@
+One of the features I worked on at TRACTIAN was rebuilding the app’s Overview screen from scratch.
+
+My work covered the screen’s architecture, layout, filters and data presentation. A key part was connecting the filter controls to the information displayed, helping users narrow down large volumes of data and find what they needed.
+
+Working on this screen meant thinking about both the interface and what happened behind it: how data reached the screen, how user selections affected the results, and how the implementation fit into the existing application.
+
+I collaborated with design, QA and engineering teams throughout the work. That gave me a broader understanding of the decisions behind a feature, beyond the part I was implementing myself.
+
+It’s a piece of work I’m glad to share because it brought together several areas I enjoy: building interfaces, organizing application logic and figuring out how to make complex information easier to use.
+
+
+https://play.google.com/store/apps/details?id=com.tractian.app&hl=pt_BR
+https://tractian.com/en

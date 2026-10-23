@@ -1,0 +1,13 @@
+A student has a question. A teacher can help. Building the software that connects them was the idea behind Bindemy Plantões.
+
+I led the development of this Q&A platform, where students could talk directly with teachers through real-time chat, with payment functionality integrated into the application.
+
+My work included implementing communication through WebSockets, message validation routines and payments. It was an opportunity to work beyond the interface and better understand how communication, application logic and backend services fit together.
+
+What I enjoyed about this project was having a clear purpose behind the technical work: helping students get answers from someone who could explain the subject to them.
+
+Leading its development also meant thinking about how the different features worked together as one product. It’s a project that helped me grow as a developer and gave me a broader perspective on building applications around a practical need.
+
+
+https://play.google.com/store/apps/details?id=com.nextlevel.plantoes&hl=pt_BR
+https://lnkd.in/dJtyj2kg

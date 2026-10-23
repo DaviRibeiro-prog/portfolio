@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV - Davi Ribeiro</title>
+    <style>
+        /* RESET E BASICS */
+        * {
+            box-sizing: border-box;
+            -webkit-print-color-adjust: exact;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            font-size: 9pt;
+            line-height: 1.28;
+            color: #000;
+            margin: 0 auto;
+            padding: 18px 28px;
+            max-width: 900px;
+            background-color: #fff;
+        }
+
+        /* LINKS */
+        a {
+            color: #000;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* HEADER */
+        header {
+            text-align: center;
+            margin-bottom: 12px;
+        }
+
+        h1 {
+            font-size: 11pt;
+            font-weight: 700;
+            text-transform: uppercase;
+            margin: 0 0 4px 0;
+            letter-spacing: 0.5px;
+        }
+
+        .role {
+            font-size: 8.7pt;
+            margin-bottom: 7px;
+            font-weight: normal;
+        }
+
+        .contact-info {
+            font-size: 8.5pt;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 4px;
+            line-height: 1.2;
+        }
+
+        .separator {
+            margin: 0 2px;
+            color: #666;
+        }
+
+        /* SEÇÕES */
+        section {
+            margin-bottom: 10px;
+        }
+
+        h2 {
+            font-size: 9.8pt;
+            font-weight: 700;
+            text-transform: uppercase;
+            border-bottom: 1px solid #000;
+            margin: 0 0 7px 0;
+            padding-bottom: 2px;
+            letter-spacing: 0.8px;
+        }
+
+        .summary {
+            margin: 0;
+            text-align: justify;
+        }
+
+        /* EXPERIÊNCIA */
+        .job-item {
+            margin-bottom: 10px;
+        }
+
+        .job-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 8px;
+            margin-bottom: 2px;
+        }
+
+        h3 {
+            font-size: 8.7pt;
+            font-weight: 700;
+            margin: 0;
+        }
+
+        .job-date {
+            font-size: 8.4pt;
+            font-weight: bold;
+            text-align: right;
+            white-space: nowrap;
+            flex-shrink: 0;
+        }
+
+        .company-info {
+            font-style: italic;
+            font-size: 8.4pt;
+            margin-top: 1px;
+            margin-left: 8px;
+        }
+
+        ul {
+            margin: 0;
+            padding-left: 16px;
+        }
+
+        li {
+            margin-bottom: 3px;
+            text-align: justify;
+        }
+
+        li::marker {
+            font-weight: 700;
+        }
+
+        /* SKILLS E TECH */
+        .skills-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 6px 18px;
+        }
+
+        .skill-group strong {
+            display: block;
+            font-size: 8.6pt;
+            margin-bottom: 1px;
+            text-decoration: underline;
+        }
+
+        /* MODO IMPRESSÃO */
+        @page {
+            size: A4;
+            margin: 0.4cm;
+        }
+
+        @media print {
+            html, body {
+                width: 210mm;
+                height: 297mm;
+            }
+
+            body {
+                margin: 0 auto;
+                padding: 0.4cm 0.7cm;
+                max-width: none;
+                box-shadow: none;
+                font-size: 8.2pt;
+                line-height: 1.2;
+            }
+
+            a {
+                text-decoration: none;
+                color: #000;
+            }
+
+            header {
+                margin-bottom: 10px;
+            }
+
+            h1 {
+                font-size: 10.5pt;
+            }
+
+            .role {
+                font-size: 8.2pt;
+            }
+
+            .contact-info {
+                font-size: 7.9pt;
+                gap: 2px;
+            }
+
+            section {
+                margin-bottom: 8px;
+            }
+
+            h2 {
+                font-size: 9.2pt;
+                margin-bottom: 4px;
+            }
+
+            .job-item {
+                margin-bottom: 8px;
+            }
+
+            .company-info {
+                font-size: 8pt;
+            }
+
+            ul {
+                padding-left: 14px;
+            }
+
+            li {
+                margin-bottom: 2px;
+            }
+
+            .skills-container {
+                gap: 5px 14px;
+            }
+
+            .job-item, li, .skill-group {
+                page-break-inside: avoid;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Davi Ribeiro</h1>
+        <div class="role">Software Engineer | Desenvolvedor Full Stack</div>
+
+        <div class="contact-info">
+            <span>São Paulo, Brazil</span>
+            <span class="separator">|</span>
+            <span><a href="mailto:davi.ribeirof16@gmail.com">davi.ribeirof16@gmail.com</a></span>
+            <span class="separator">|</span>
+            <span><a href="https://www.linkedin.com/in/davirfa/" target="_blank">linkedin.com/davirfa</a></span>
+            <span class="separator">|</span>
+            <span><a href="https://ctekno.github.io/caioPortfolio" target="_blank">Portfolio</a></span>
+        </div>
+    </header>
+
+    <section>
+        <h2>Professional Experience</h2>
+
+        <div class="job-item">
+            <div class="job-header">
+                <div class="job-title-group">
+                    <h3>Software Developer</h3>
+                    <div class="company-info">TRACTIAN | Hybrid</div>
+                </div>
+                <span class="job-date">January 2023 - February 2024</span>
+            </div>
+            <ul>
+                <li>Shipped features that received excellent user feedback within <strong>+15 min</strong> of launch.</li>
+                <li>Contributed to features associated with an average session time of <strong>+10 min</strong>.</li>
+                <li>Investigated production issues, identified root causes and delivered bug fixes and production hotfixes.</li>
+                <li>Refactored and improved existing application code to support maintainability and reliable delivery.</li>
+                <li>Integrated REST APIs and implemented filtering for large volumes of sensitive application data.</li>
+                <li>Rebuilt the core Overview screen, contributing from application architecture through UI implementation.</li>
+                <li>Participated in code reviews and testing within CI/CD workflows.</li>
+                <li>Contributed actively to technical discussions and implementation decisions with backend, frontend, QA, UX/UI and hardware teams.</li>
+                <li>Coordinated data flows and feature delivery across teams, including through cross-functional discussions and meetings.</li>
+                <li>Applied a strong UI/UX focus, using Figma designs to guide interface implementation and collaborating with UX/UI partners to refine the experience.</li>
+            </ul>
+        </div>
+
+        <div class="job-item">
+            <div class="job-header">
+                <div class="job-title-group">
+                    <h3>Software Developer</h3>
+                    <div class="company-info">BINDEMY | Remote</div>
+                </div>
+                <span class="job-date">February 2020 - January 2023</span>
+            </div>
+            <ul>
+                <li>Took an application from idea to complete release in <strong>+1 month</strong>.</li>
+                <li>Leveraged AI-assisted development with Claude Code, Copilot and MCP to ship features <strong>3x faster</strong>, reducing delivery time from <strong>1-2 weeks</strong> to <strong>2-3 days</strong>.</li>
+                <li>Developed and maintained educational applications used by <strong>+2,000</strong> registered students across <strong>+7</strong> institutions.</li>
+                <li>Independently developed the mobile Q&amp;A application, implementing WebSocket chat, message validation, media management and payment integration.</li>
+                <li>Led development of a course platform with integrated payments and an accompanying application that reached <strong>+1,000</strong> downloads across platforms.</li>
+                <li>Integrated AWS media storage and optimized storage for images, video and audio; implemented push and local notifications using Firebase Cloud Messaging and Flutter notification tools.</li>
+            </ul>
+        </div>
+    </section>
+
+    <section>
+        <h2>Professional Summary</h2>
+        <p class="summary">Software developer with four years of professional experience delivering and maintaining production applications, including a product serving <strong>+20,000</strong> monthly active users. Experienced in debugging, code review, testing, feature development, refactoring and application architecture. Primary professional background in Dart and Flutter, with additional knowledge of TypeScript, Java and Spring Boot. Rebuilt core application functionality and independently delivered products involving real-time communication, payment and API integrations. Interested in engineering work focused on code correctness, maintainability and solving technical problems.</p>
+    </section>
+
+    <section>
+        <h2>Technical Skills and Competencies</h2>
+        <div class="skills-container">
+            <div class="skill-group">
+                <strong>Programming</strong>
+                Dart and Flutter; additional knowledge of Java, Spring Boot, Python, Node.js, TypeScript and JavaScript.
+            </div>
+            <div class="skill-group">
+                <strong>Code Quality</strong>
+                Debugging, unit testing, code review, troubleshooting, bug fixes and production hotfixes.
+            </div>
+            <div class="skill-group">
+                <strong>Software Design</strong>
+                Object-oriented programming, SOLID, design patterns, Clean Code and Clean Architecture.
+            </div>
+            <div class="skill-group">
+                <strong>APIs and Data</strong>
+                REST API integration, GraphQL, WebSockets, SQL, relational data modeling and AWS media storage.
+            </div>
+            <div class="skill-group">
+                <strong>AI &amp; Data</strong>
+                Claude, GPT-4, AI agents, prompt engineering, Retrieval-Augmented Generation (RAG), LLM integration, semantic search, embeddings, vector databases and document chunking.
+            </div>
+            <div class="skill-group">
+                <strong>Delivery and Tools</strong>
+                Git, GitHub, GitLab CI/CD, GitHub Actions, Datadog, Firebase (Firestore, Notifications, Hosting, Authentication, Realtime Database), Figma (UI/UX Design) and Agile practices.
+            </div>
+            <div class="skill-group">
+                <strong>Languages</strong>
+                Portuguese: Native | English: Advanced | Spanish: Advanced | Russian: Intermediate
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>
