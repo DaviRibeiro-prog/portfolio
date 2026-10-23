@@ -62,7 +62,9 @@ flutter:
 
   assets:
     - lib/utils/Retrato profesional con camiseta negra - Copia.png
-    - lib/utils/Davi_Ribeiro_CV_Software_Engineer.pdf
+    - lib/utils/Davi_Ribeiro_CV_Software_Engineer_EN.pdf
+    - lib/utils/Davi_Ribeiro_CV_Software_Engineer_PT.pdf
+    - lib/utils/Davi_Ribeiro_CV_Software_Engineer_ES.pdf
     - lib/utils/tractian/
     - lib/utils/bindemy/plantões/
     - lib/utils/bindemy/Cursos/

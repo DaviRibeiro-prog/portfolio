@@ -353,8 +353,13 @@ class _LanguageSelector extends StatelessWidget {
 class PortfolioPage extends StatefulWidget {
   const PortfolioPage({super.key});
 
-  static const _cvPath =
-      'assets/lib/utils/Davi_Ribeiro_CV_Software_Engineer.pdf';
+
+  static const _cvPaths = {
+    'en': 'assets/lib/utils/Davi_Ribeiro_CV_Software_Engineer_EN.pdf',
+    'pt': 'assets/lib/utils/Davi_Ribeiro_CV_Software_Engineer_PT.pdf',
+    'es': 'assets/lib/utils/Davi_Ribeiro_CV_Software_Engineer_ES.pdf',
+  };
+
   static const _portraitPath =
       'lib/utils/Retrato profesional con camiseta negra - Copia.png';
 
@@ -407,8 +412,15 @@ class _PortfolioPageState extends State<PortfolioPage> {
     }
   }
 
-  Future<void> _downloadCv() async {
-    final uri = Uri.base.resolve(PortfolioPage._cvPath);
+Future<void> _downloadCv() async {
+    final cvPath = PortfolioPage._cvPaths[_language];
+
+    if (cvPath == null) {
+      throw Exception('Currículo não encontrado para este idioma.');
+    }
+
+    final uri = Uri.base.resolve(cvPath);
+
     if (!await launchUrl(uri, mode: LaunchMode.externalApplication)) {
       throw Exception('Não foi possível abrir o currículo.');
     }
