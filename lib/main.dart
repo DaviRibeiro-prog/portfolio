@@ -63,7 +63,7 @@ class _PortfolioCopy {
       'tractian_intro':
           'Uma reconstrução da tela Overview do app TRACTIAN — unindo arquitetura, experiência de uso e grandes volumes de dados.',
       'tractian_b1':
-          'Contribuí para um produto com +20.000 usuários ativos mensais e sessões médias de +10 minutos.',
+          'Contribuí para um produto com +50.000 usuários ativos mensais e sessões médias de +10 minutos.',
       'tractian_b2':
           'Reconstruí a tela Overview: arquitetura, interface, filtros e integração REST para grandes volumes de dados.',
       'tractian_b3':
@@ -235,7 +235,7 @@ class _PortfolioCopy {
       'tractian_intro':
           'Una reconstrucción de la pantalla Overview de la app TRACTIAN, combinando arquitectura, experiencia de usuario y grandes volúmenes de datos.',
       'tractian_b1':
-          'Contribuí a un producto con +20.000 usuarios activos mensuales y sesiones promedio de más de +10 minutos.',
+          'Contribuí a un producto con +50.000 usuarios activos mensuales y sesiones promedio de más de +10 minutos.',
       'tractian_b2':
           'Reconstruí la pantalla Overview: arquitectura, interfaz, filtros e integración REST para grandes volúmenes de datos.',
       'tractian_b3':
@@ -267,7 +267,7 @@ class _PortfolioCopy {
       'about_eyebrow': 'UN POCO SOBRE MÍ',
       'about_title': 'Código con propósito. Productos con cuidado.',
       'about_summary':
-          'Tengo cuatro años de experiencia profesional entregando y manteniendo aplicaciones en producción, incluidos productos con más de 20.000 usuarios activos mensuales. Mi especialidad principal es Dart y Flutter, con experiencia adicional en TypeScript, Java y Spring Boot.\n\nTrabajo en todo el ciclo de desarrollo: arquitectura, nuevas funcionalidades, integración de APIs, pruebas, code review, resolución de problemas y mejoras de UI/UX. También uso herramientas de IA de forma estructurada para acelerar tareas y entregas, manteniendo la arquitectura, la calidad y los fundamentos de ingeniería en el centro del proceso.',
+          'Tengo cuatro años de experiencia profesional entregando y manteniendo aplicaciones en producción, incluidos productos con más de 50.000 usuarios activos mensuales. Mi especialidad principal es Dart y Flutter, con experiencia adicional en TypeScript, Java y Spring Boot.\n\nTrabajo en todo el ciclo de desarrollo: arquitectura, nuevas funcionalidades, integración de APIs, pruebas, code review, resolución de problemas y mejoras de UI/UX. También uso herramientas de IA de forma estructurada para acelerar tareas y entregas, manteniendo la arquitectura, la calidad y los fundamentos de ingeniería en el centro del proceso.',
       'skills_title': 'MI CAJA DE HERRAMIENTAS',
       'skill_mobile': 'Móvil y Lenguajes',
       'skill_mobile_value':
