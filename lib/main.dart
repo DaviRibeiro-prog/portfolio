@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:simple_icons/simple_icons.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 void main() {
@@ -147,7 +149,7 @@ class _PortfolioCopy {
       'tractian_intro':
           'A rebuild of TRACTIAN’s app Overview screen — combining architecture, user experience, and large volumes of data.',
       'tractian_b1':
-          'Contributed to a product with +20,000 monthly active users and average sessions over +10 minutes.',
+          'Contributed to a product with +50,000 monthly active users and average sessions over +10 minutes.',
       'tractian_b2':
           'Rebuilt the Overview screen: architecture, UI, filters, and REST integration for large volumes of data.',
       'tractian_b3':
@@ -179,7 +181,7 @@ class _PortfolioCopy {
       'about_eyebrow': 'A LITTLE ABOUT ME',
       'about_title': 'Thoughtful code. Products with purpose.',
       'about_summary':
-          'I have four years of professional experience delivering and maintaining production applications, including products with 20,000+ monthly active users. My primary expertise is Dart and Flutter, with additional experience in TypeScript, Java, and Spring Boot.\n\nI work across the development lifecycle: architecture, feature delivery, API integrations, testing, code reviews, troubleshooting, and UI/UX improvements. I also use AI tools in a structured way to accelerate tasks and delivery, while keeping architecture decisions, quality, and strong engineering fundamentals at the core of the process.',
+          'I have four years of professional experience delivering and maintaining production applications, including products with 50,000+ monthly active users. My primary expertise is Dart and Flutter, with additional experience in TypeScript, Java, and Spring Boot.\n\nI work across the development lifecycle: architecture, feature delivery, API integrations, testing, code reviews, troubleshooting, and UI/UX improvements. I also use AI tools in a structured way to accelerate tasks and delivery, while keeping architecture decisions, quality, and strong engineering fundamentals at the core of the process.',
       'skills_title': 'MY TOOLKIT',
       'skill_mobile': 'Mobile & Languages',
       'skill_mobile_value':
@@ -351,7 +353,8 @@ class _LanguageSelector extends StatelessWidget {
 class PortfolioPage extends StatefulWidget {
   const PortfolioPage({super.key});
 
-  static const _cvPath = 'assets/lib/utils/Davi_Ribeiro_CV_Espanol.pdf';
+  static const _cvPath =
+      'assets/lib/utils/Davi_Ribeiro_CV_Software_Engineer.pdf';
   static const _portraitPath =
       'lib/utils/Retrato profesional con camiseta negra - Copia.png';
 
@@ -380,6 +383,27 @@ class _PortfolioPageState extends State<PortfolioPage> {
     final uri = Uri.parse(url);
     if (!await launchUrl(uri, mode: LaunchMode.externalApplication)) {
       throw Exception('Não foi possível abrir $url');
+    }
+  }
+
+  Future<void> _openEmail() async {
+    const email = 'davi.ribeirof16@gmail.com';
+    final gmailComposeUri = Uri.https('mail.google.com', '/mail/', {
+      'view': 'cm',
+      'fs': '1',
+      'to': email,
+    });
+
+    if (await launchUrl(
+      gmailComposeUri,
+      mode: LaunchMode.externalApplication,
+    )) {
+      return;
+    }
+
+    final mailtoUri = Uri(scheme: 'mailto', path: email);
+    if (!await launchUrl(mailtoUri, mode: LaunchMode.externalApplication)) {
+      throw Exception('Não foi possível abrir uma mensagem para $email');
     }
   }
 
@@ -430,6 +454,7 @@ class _PortfolioPageState extends State<PortfolioPage> {
                     portraitPath: PortfolioPage._portraitPath,
                     onProjects: () => _goTo(context, projectsKey),
                     onOpenLink: _openLink,
+                    onOpenEmail: _openEmail,
                   ),
                   _AiStrip(isMobile: isMobile, copy: copy),
                   _ProjectsSection(
@@ -602,6 +627,7 @@ class _HeroSection extends StatelessWidget {
     required this.portraitPath,
     required this.onProjects,
     required this.onOpenLink,
+    required this.onOpenEmail,
   });
 
   final bool isMobile;
@@ -609,6 +635,7 @@ class _HeroSection extends StatelessWidget {
   final String portraitPath;
   final VoidCallback onProjects;
   final Future<void> Function(String) onOpenLink;
+  final Future<void> Function() onOpenEmail;
 
   @override
   Widget build(BuildContext context) {
@@ -634,6 +661,7 @@ class _HeroSection extends StatelessWidget {
                       copy: copy,
                       onProjects: onProjects,
                       onOpenLink: onOpenLink,
+                      onOpenEmail: onOpenEmail,
                     ),
                   ],
                 )
@@ -646,6 +674,7 @@ class _HeroSection extends StatelessWidget {
                         copy: copy,
                         onProjects: onProjects,
                         onOpenLink: onOpenLink,
+                        onOpenEmail: onOpenEmail,
                       ),
                     ),
                     const SizedBox(width: 65),
@@ -667,12 +696,14 @@ class _HeroCopy extends StatelessWidget {
     required this.copy,
     required this.onProjects,
     required this.onOpenLink,
+    required this.onOpenEmail,
   });
 
   final bool isMobile;
   final _PortfolioCopy copy;
   final VoidCallback onProjects;
   final Future<void> Function(String) onOpenLink;
+  final Future<void> Function() onOpenEmail;
 
   @override
   Widget build(BuildContext context) {
@@ -710,15 +741,31 @@ class _HeroCopy extends StatelessWidget {
           runSpacing: 10,
           children: [
             _HeroSocialLink(
-              icon: Icons.email_outlined,
+              icon: Icon(
+                SimpleIcons.gmail,
+                color: const Color(0xFFEA4335),
+                size: 16,
+              ),
               label: 'davi.ribeirof16@gmail.com',
-              onTap: () => onOpenLink('mailto:davi.ribeirof16@gmail.com'),
+              onTap: onOpenEmail,
             ),
             _HeroSocialLink(
-              icon: Icons.work_outline_rounded,
+              icon: FaIcon(
+                FontAwesomeIcons.linkedin,
+                color: const Color(0xFF0A66C2),
+                size: 16,
+              ),
               label: 'LinkedIn',
-              isLinkedIn: true,
               onTap: () => onOpenLink('https://www.linkedin.com/in/davirfa/'),
+            ),
+            _HeroSocialLink(
+              icon: Icon(
+                SimpleIcons.github,
+                color: const Color(0xFF181717),
+                size: 16,
+              ),
+              label: 'GitHub',
+              onTap: () => onOpenLink('https://github.com/DaviRibeiro-prog/'),
             ),
           ],
         ),
@@ -764,7 +811,7 @@ class _HeroCopy extends StatelessWidget {
           runSpacing: 12,
           children: [
             _HeroMetric(value: '4', label: copy['experience']),
-            _HeroMetric(value: '20k+', label: copy['active_users']),
+            _HeroMetric(value: '50k+', label: copy['active_users']),
             _HeroMetric(value: '3x', label: copy['faster_with_ai']),
           ],
         ),
@@ -778,13 +825,11 @@ class _HeroSocialLink extends StatelessWidget {
     required this.icon,
     required this.label,
     required this.onTap,
-    this.isLinkedIn = false,
   });
 
-  final IconData icon;
+  final Widget icon;
   final String label;
   final VoidCallback onTap;
-  final bool isLinkedIn;
 
   @override
   Widget build(BuildContext context) {
@@ -796,26 +841,7 @@ class _HeroSocialLink extends StatelessWidget {
         child: Row(
           mainAxisSize: MainAxisSize.min,
           children: [
-            if (isLinkedIn)
-              Container(
-                width: 17,
-                height: 17,
-                alignment: Alignment.center,
-                decoration: BoxDecoration(
-                  color: const Color(0xFF0A66C2),
-                  borderRadius: BorderRadius.circular(3),
-                ),
-                child: const Text(
-                  'in',
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 11,
-                    fontWeight: FontWeight.w900,
-                  ),
-                ),
-              )
-            else
-              Icon(icon, color: const Color(0xFF638657), size: 16),
+            icon,
             const SizedBox(width: 7),
             Text(
               label,
@@ -1035,7 +1061,10 @@ class _ProjectsSection extends StatelessWidget {
             copy['google_play'],
             'https://play.google.com/store/apps/details?id=com.nextlevel.plantoes&hl=pt_BR',
           ),
-          _ProjectLink('Git Hub', 'https://github.com/DaviRibeiro-prog/plantao_app'),
+          _ProjectLink(
+            'Git Hub',
+            'https://github.com/DaviRibeiro-prog/plantao_app',
+          ),
           _ProjectLink('BINDEMY', 'https://plantoes.bindemy.com.br/'),
         ],
         number: '02',

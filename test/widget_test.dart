@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:portfolio/main.dart';
+import 'package:simple_icons/simple_icons.dart';
 
 void main() {
   testWidgets('shows portfolio content on desktop', (
@@ -20,6 +22,10 @@ void main() {
     expect(find.text('Ver projetos'), findsOneWidget);
     expect(find.text('Entre em contato'), findsNothing);
     expect(find.text('Cidadania europeia'), findsNothing);
+    expect(find.text('GitHub'), findsAtLeastNWidgets(1));
+    expect(find.byIcon(SimpleIcons.github), findsOneWidget);
+    expect(find.byType(FaIcon), findsOneWidget);
+    expect(find.byIcon(SimpleIcons.gmail), findsOneWidget);
 
     await tester.tap(find.text('EN'));
     await tester.pumpAndSettle();
